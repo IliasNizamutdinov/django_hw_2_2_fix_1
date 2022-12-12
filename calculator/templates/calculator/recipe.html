@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Блюдо "{{dish}}"</title>
+</head>
+<body>
+
+<a1>Это рецепт блюда "{{dish}}" </a1>
+
+<a3>Количество персон: {{servings}}</a3>
+
+{% for ingredient, amount in recipe.items %}
+    <p>{{ ingredient }}: {{ amount }}</p>
+{% empty %}
+    <p>Такого рецепта не знаю :(</p>
+{% endfor %}
+
+<a1>Рассчитать на следующее количестов персон: <a1>
+
+<a href = ?servings=1>1</a> /
+    <a href = ?servings=2>2</a> /
+    <a href = ?servings=3>3</a> /
+    <a href = ?servings=4>4</a> /
+    <a href = ?servings=5>5</a>
+
+    <br><br>
+
+<a href="{% url 'index' %}"><button>На главную!!!</button></a>
+
+</body>
+</html>
